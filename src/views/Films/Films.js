@@ -26,7 +26,7 @@ export default function Films() {
         <div key={film.id}>
           <h2>Title: {film.title}</h2>
           <p>Box Office: {film.box_office_total}</p>
-          <p>Acadamy Awards Nominations:  {film.academy_award_nominations}</p>
+          <p>Academy Awards Nominations:  {film.academy_award_nominations}</p>
         </div>
       ))}
     </div>

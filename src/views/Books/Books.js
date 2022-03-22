@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { fetchBooks } from '../../services/books';
 
-export default function Films() {
+export default function Books() {
   const [books, setBooks] = useState ([]);
   
   useEffect(() => {

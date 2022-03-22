@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { fetchCharacters } from '../../services/characters';
-import { fetchFilms } from '../../services/films';
 
-
-
-export default function Films() {
-  const [films, setFilms] = useState ([]);
-
+export default function Characters() {
+  const [character, setCharacter] = useState ([]);
+  const [race, setRace] = useState ('All');
   useEffect(() => {
     const fetch = async () => {
       try {
-        const resp = await fetchCharacters();
-        setFilms(resp);
+        const resp = await fetchCharacters(race);
+        setCharacter(resp);
       } catch (e) {
         alert(e.message);
       }
@@ -22,12 +19,10 @@ export default function Films() {
   }, []);
 
   return ( 
-    <div className='films'>
-      {films.map((film) => ( 
-        <div key={film.id}>
-          <h2>Title: {film.title}</h2>
-          <p>Box Office: {film.box_office_total}</p>
-          <p>Acadamy Awards Nominations:  {film.academy_award_nominations}</p>
+    <div className='characters'>
+      {character.map((characters) => ( 
+        <div key={characters.id}>
+          <h1>{characters.name}</h1>
         </div>
       ))}
     </div>
